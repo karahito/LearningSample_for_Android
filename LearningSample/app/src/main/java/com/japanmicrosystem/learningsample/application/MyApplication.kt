@@ -20,6 +20,7 @@ import android.app.Application
 import android.content.Context
 import com.japanmicrosystem.learningsample.BuildConfig
 import com.japanmicrosystem.learningsample.application.di.AppComponent
+import com.japanmicrosystem.learningsample.application.di.AppModule
 import com.japanmicrosystem.learningsample.application.di.DaggerAppComponent
 import timber.log.Timber
 import javax.inject.Inject
@@ -43,6 +44,8 @@ class MyApplication:Application() {
         if(BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.builder()
+                .appModule(AppModule(this))
+                .build()
     }
 }

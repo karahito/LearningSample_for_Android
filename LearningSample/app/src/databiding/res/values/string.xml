@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name_databinding">DataBinding Sample</string>
+    <!--<string name="disample">DiSample</string>-->
+</resources>
